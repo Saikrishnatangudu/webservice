@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/NewXMLSchema" xmlns:tns="http://www.example.org/NewXMLSchema" elementFormDefault="qualified">
+
+    <element name="EmployeeElement" type="tns:Employee"></element>
+    
+    <complexType name="Employee">
+    	<sequence>
+    		<element name="empNo" type="int"></element>
+    		<element name="empName" type="string"></element>
+    		<element name="salary" type="float"></element>
+    	</sequence>
+    </complexType>
+</schema>

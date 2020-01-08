@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com" xmlns:intf="http://com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="one">
+    <complexType/>
+   </element>
+   <element name="oneResponse">
+    <complexType>
+     <sequence>
+      <element name="oneReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cal">
+    <complexType>
+     <sequence>
+      <element name="num1" type="xsd:int"/>
+      <element name="num2" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="calResponse">
+    <complexType>
+     <sequence>
+      <element name="calReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="oneResponse">
+
+      <wsdl:part element="impl:oneResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="calRequest">
+
+      <wsdl:part element="impl:cal" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="calResponse">
+
+      <wsdl:part element="impl:calResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="oneRequest">
+
+      <wsdl:part element="impl:one" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="First">
+
+      <wsdl:operation name="one">
+
+         <wsdl:input message="impl:oneRequest" name="oneRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:oneResponse" name="oneResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cal">
+
+         <wsdl:input message="impl:calRequest" name="calRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:calResponse" name="calResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FirstSoapBinding" type="impl:First">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="one">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="oneRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="oneResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cal">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="calRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="calResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FirstService">
+
+      <wsdl:port binding="impl:FirstSoapBinding" name="First">
+
+         <wsdlsoap:address location="http://localhost:9090/WebService/services/First"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

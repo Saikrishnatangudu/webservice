@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://model.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://model.com" xmlns:intf="http://model.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getStudentName">
+    <complexType/>
+   </element>
+   <element name="getStudentNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getStudentNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFee">
+    <complexType/>
+   </element>
+   <element name="getFeeResponse">
+    <complexType>
+     <sequence>
+      <element name="getFeeReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setFee">
+    <complexType>
+     <sequence>
+      <element name="fee" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setFeeResponse">
+    <complexType/>
+   </element>
+   <element name="getStudentId">
+    <complexType/>
+   </element>
+   <element name="getStudentIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getStudentIdReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStudentName">
+    <complexType>
+     <sequence>
+      <element name="studentName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStudentNameResponse">
+    <complexType/>
+   </element>
+   <element name="getStudentById">
+    <complexType>
+     <sequence>
+      <element name="studentId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStudentByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getStudentByIdReturn" type="impl:Student"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Student">
+    <sequence>
+     <element name="fee" type="xsd:double"/>
+     <element maxOccurs="unbounded" name="studentById" nillable="true" type="impl:Student"/>
+     <element name="studentId" type="xsd:int"/>
+     <element name="studentName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="setStudentId">
+    <complexType>
+     <sequence>
+      <element name="studentId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStudentIdResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setFeeResponse">
+
+      <wsdl:part element="impl:setFeeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setFeeRequest">
+
+      <wsdl:part element="impl:setFee" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStudentIdRequest">
+
+      <wsdl:part element="impl:setStudentId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStudentByIdRequest">
+
+      <wsdl:part element="impl:getStudentById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStudentByIdResponse">
+
+      <wsdl:part element="impl:getStudentByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStudentIdResponse">
+
+      <wsdl:part element="impl:getStudentIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStudentNameResponse">
+
+      <wsdl:part element="impl:setStudentNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStudentIdResponse">
+
+      <wsdl:part element="impl:setStudentIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStudentIdRequest">
+
+      <wsdl:part element="impl:getStudentId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFeeResponse">
+
+      <wsdl:part element="impl:getFeeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStudentNameRequest">
+
+      <wsdl:part element="impl:getStudentName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStudentNameRequest">
+
+      <wsdl:part element="impl:setStudentName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStudentNameResponse">
+
+      <wsdl:part element="impl:getStudentNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFeeRequest">
+
+      <wsdl:part element="impl:getFee" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Student">
+
+      <wsdl:operation name="getStudentName">
+
+         <wsdl:input message="impl:getStudentNameRequest" name="getStudentNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStudentNameResponse" name="getStudentNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFee">
+
+         <wsdl:input message="impl:getFeeRequest" name="getFeeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFeeResponse" name="getFeeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setFee">
+
+         <wsdl:input message="impl:setFeeRequest" name="setFeeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setFeeResponse" name="setFeeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStudentId">
+
+         <wsdl:input message="impl:getStudentIdRequest" name="getStudentIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStudentIdResponse" name="getStudentIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStudentName">
+
+         <wsdl:input message="impl:setStudentNameRequest" name="setStudentNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setStudentNameResponse" name="setStudentNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStudentById">
+
+         <wsdl:input message="impl:getStudentByIdRequest" name="getStudentByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStudentByIdResponse" name="getStudentByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStudentId">
+
+         <wsdl:input message="impl:setStudentIdRequest" name="setStudentIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setStudentIdResponse" name="setStudentIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="StudentSoapBinding" type="impl:Student">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getStudentName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStudentNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStudentNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFee">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFeeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFeeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setFee">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setFeeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setFeeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStudentId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStudentIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStudentIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStudentName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setStudentNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setStudentNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStudentById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStudentByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStudentByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStudentId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setStudentIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setStudentIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="StudentService">
+
+      <wsdl:port binding="impl:StudentSoapBinding" name="Student">
+
+         <wsdlsoap:address location="http://localhost:9090/WebService/services/Student"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,31 @@
+package com.model;
+
+public class Student {
+	private int studentId;
+	private int studentName;
+	private double fee;
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+	public int getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(int studentName) {
+		this.studentName = studentName;
+	}
+	public double getFee() {
+		return fee;
+	}
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+	public Student getStudentById(int studentId){
+		
+		Student student = new Student();
+		if ()
+		
+	}
+}

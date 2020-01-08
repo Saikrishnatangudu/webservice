@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:EmployeeElement xmlns:tns="http://www.example.org/NewXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/NewXMLSchema NewXMLSchema.xsd ">
+  <tns:empNo>0</tns:empNo>
+  <tns:empName>tns:empName</tns:empName>
+  <tns:salary>0.0</tns:salary>
+</tns:EmployeeElement>

@@ -1,0 +1,32 @@
+package com.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping(value = "street")
+public class AppController {
+	@GetMapping(value = "/first")
+	public String functionOne() {
+
+		return "success";
+
+	}
+
+	@GetMapping(value = "/")
+	public String welcome() {
+
+		return "index";
+
+	}
+	
+	@GetMapping(value = "/second/{aa}")
+	public String firstPage(@PathVariable("aa") String userName) {
+		System.out.println("user name :"+userName); //use logger
+		return "second";
+
+	}
+	
+}

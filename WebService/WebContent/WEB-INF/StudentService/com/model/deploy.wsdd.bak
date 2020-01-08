@@ -1,0 +1,52 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from StudentService WSDL service -->
+
+  <service name="Student" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://model.com"/>
+      <parameter name="wsdlServiceElement" value="StudentService"/>
+      <parameter name="schemaQualified" value="http://model.com"/>
+      <parameter name="wsdlServicePort" value="Student"/>
+      <parameter name="className" value="com.model.StudentSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Student"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getStudentName" qname="operNS:getStudentName" xmlns:operNS="http://model.com" returnQName="retNS:getStudentNameReturn" xmlns:retNS="http://model.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getFee" qname="operNS:getFee" xmlns:operNS="http://model.com" returnQName="retNS:getFeeReturn" xmlns:retNS="http://model.com" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setFee" qname="operNS:setFee" xmlns:operNS="http://model.com" soapAction="" >
+        <parameter qname="pns:fee" xmlns:pns="http://model.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getStudentId" qname="operNS:getStudentId" xmlns:operNS="http://model.com" returnQName="retNS:getStudentIdReturn" xmlns:retNS="http://model.com" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setStudentName" qname="operNS:setStudentName" xmlns:operNS="http://model.com" soapAction="" >
+        <parameter qname="pns:studentName" xmlns:pns="http://model.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getStudentById" qname="operNS:getStudentById" xmlns:operNS="http://model.com" returnQName="retNS:getStudentByIdReturn" xmlns:retNS="http://model.com" returnType="rtns:Student" xmlns:rtns="http://model.com" soapAction="" >
+        <parameter qname="pns:studentId" xmlns:pns="http://model.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setStudentId" qname="operNS:setStudentId" xmlns:operNS="http://model.com" soapAction="" >
+        <parameter qname="pns:studentId" xmlns:pns="http://model.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getStudentId getStudentById setFee getStudentName getFee setStudentName setStudentId"/>
+
+      <typeMapping
+        xmlns:ns="http://model.com"
+        qname="ns:Student"
+        type="java:com.model.Student_Type"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
